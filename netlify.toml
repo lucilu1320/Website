@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  VITE_API_BASE_URL = "https://api.kvaschool.edu.in/api"
+  VITE_ADMIN_EMAIL = "administration@kvaschool.edu.in"
+  VITE_SENDER_EMAIL = "admissions@kvaschool.edu.in"

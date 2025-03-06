@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add to your existing CSS */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Add transition timing function */
+.ease-out-expo {
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Section animations */
+.section-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image fade in animation */
+.image-fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+.image-fade-in.loaded {
+  opacity: 1;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Adjust font sizes for better readability on mobile */
+  h1 {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  /* Improve touch targets */
+  button, 
+  a {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Adjust spacing for mobile */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Improve form elements on mobile */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+
+  /* Better spacing for mobile navigation */
+  .nav-item {
+    padding: 1rem 0;
+  }
+
+  /* Adjust grid layouts for mobile */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Improve table responsiveness */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  /* Adjust grid for tablets */
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Responsive typography */
+@layer base {
+  html {
+    font-size: 16px;
+    @screen sm {
+      font-size: 16px;
+    }
+    @screen lg {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Responsive spacing */
+.section-padding {
+  @apply py-8 sm:py-12 lg:py-16;
+}
+
+.content-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Responsive images */
+.responsive-image {
+  @apply w-full h-auto object-cover;
+}
+
+/* Responsive navigation */
+.nav-menu {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-50 lg:relative lg:bg-transparent;
+}
+
+/* Responsive buttons */
+.btn {
+  @apply px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base;
+}
+
+/* Responsive cards */
+.card {
+  @apply p-4 sm:p-6 rounded-lg shadow-md;
+}
+
+/* Responsive forms */
+.form-group {
+  @apply mb-4 sm:mb-6;
+}
+
+.form-label {
+  @apply block mb-1 sm:mb-2 text-sm font-medium;
+}
+
+.form-input {
+  @apply w-full px-3 py-2 sm:py-3 rounded-lg;
+}
+
+/* Responsive tables */
+.table-responsive {
+  @apply w-full overflow-x-auto -mx-4 sm:mx-0;
+}
+
+/* Responsive modals */
+.modal {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6;
+}
+
+.modal-content {
+  @apply w-full max-w-lg mx-auto bg-white rounded-lg shadow-xl;
+}

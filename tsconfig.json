@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // ---- Language & environment targets ----
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": true,
+    "jsx": "react-jsx",
+
+    // ---- Interop & import settings ----
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true, 
+    // ^ requires "noEmit" or "emitDeclarationOnly" to be true
+
+    // ---- Strictness & checks ----
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    // ---- Unused checks (optional) ----
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+
+    // ---- Declaration-Only Emission ----
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./types"
+    // ^ "emitDeclarationOnly": true => TS will not emit .js
+  },
+  "include": ["src"]
+}

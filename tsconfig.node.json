@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    // Also part of a project reference
+    "composite": true,
+    
+    // Node config can share many settings, but typically does not need DOM libs
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // you can remove "DOM" if not needed in node
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    // Emit & declaration settings
+    "declaration": true,
+    "declarationDir": "./types-node",  // separate folder for node .d.ts if you like
+    "emitDeclarationOnly": false,
+    "outDir": "./node-dist",
+
+    // Strictness & checks
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+
+    // If you have JSX in Node scripts (rare), keep "jsx": "react-jsx".
+    "jsx": "react-jsx",
+
+    // Module compatibility
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+
+  // Here, we only include the Node-specific files
+  "include": ["vite.config.ts"]
+
+  // No "references" here referencing itself
+}
